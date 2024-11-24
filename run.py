@@ -90,7 +90,7 @@ if __name__ == '__main__':
     parser.add_argument('--itr', type=int, default=1, help='experiments times')
     parser.add_argument('--accum_iter', type=int, default=1, help='gradient accumulation')
     parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
-    parser.add_argument('--total_iters', type=int, default=100000, help='total number of training iterations')
+    parser.add_argument('--total_iters', type=int, default=20000, help='total number of training iterations')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size of train input data')
     parser.add_argument('--eval_batch_size', type=int, default=128, help='batch size of train input data')
     parser.add_argument('--patience', type=int, default=3, help='early stopping patience')
