@@ -1,0 +1,20 @@
+name: 'JupyterLab' 
+description: 'jupyterlab'
+setup_command: 'bash setup.sh'
+command: 'bash command.sh'
+is_parent: True
+# project_id: #enter  project ID
+priority: 1
+tags: ['enter tags']
+resources:
+  num_nodes: 1
+  docker_image: 'docker.apple.com/iris/iris:latest'
+  num_gpus: 1
+  # cluster: aws_1
+  # num_cpus: 64
+  # memory_gb: 1024
+  # disk_gb: 2048.0
+  timeout: 14d
+  ports: ["NOTEBOOK_PORT"]
+permissions:
+  viewers: ['mi-cvnets-team']

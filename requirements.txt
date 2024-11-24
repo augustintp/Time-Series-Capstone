@@ -1,0 +1,17 @@
+einops
+matplotlib
+numpy
+pandas
+patool
+scikit-learn
+scipy
+sktime
+sympy
+tqdm
+seaborn
+wandb==0.17.9
+tensorboard
+gymnasium
+torch
+torchvision
+torchaudio
