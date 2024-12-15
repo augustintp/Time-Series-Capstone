@@ -15,7 +15,7 @@ wandb login
 ```
 3. Run the script.
 ```
-bash scripts/m5/Linear.sh
+bash scripts/forecast/m5/Linear.sh
 ```
 
 # M5 Data Versions
