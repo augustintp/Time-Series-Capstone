@@ -13,6 +13,7 @@ Put these files in the`./dataset/m5` folder.
 ```
 wandb login
 ```
+You will need to create your own W&B account. Once you do, you should update entity and project [here](https://github.com/zhykoties/Time-Series-Capstone/blob/9106dd57da80fcbf72d68a67ed778618fde77116/run.py#L146).
 3. Run the script.
 ```
 bash scripts/forecast/m5/Linear.sh
