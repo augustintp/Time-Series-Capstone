@@ -5,6 +5,16 @@ from utils.print_args import print_args
 import random
 import numpy as np
 from utils.tools import name_with_datetime
+import sys
+import os
+
+# Add the directory containing 'exp' to sys.path
+exp_folder_path = '/path/to/exp'  # Replace with the actual path to the exp folder
+sys.path.append(exp_folder_path)
+
+# Import the module
+from exp.exp_forecasting import Exp_Forecast
+
 
 import wandb
 from torch.utils.tensorboard import SummaryWriter
