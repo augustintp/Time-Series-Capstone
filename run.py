@@ -143,8 +143,8 @@ if __name__ == '__main__':
 
             if args.track:
                 wandb_tags = []
-                wandb.init(entity="zhykoties",
-                           project="capstone",  # TODO: change to your project name
+                wandb.init(entity="augustin-t-pelleau",
+                           project="capstoneATP",  # TODO: change to your project name
                            name=setting,
                            sync_tensorboard=True,
                            monitor_gym=True, config={
