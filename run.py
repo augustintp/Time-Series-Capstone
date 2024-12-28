@@ -195,6 +195,53 @@ if __name__ == '__main__':
 
             torch.cuda.empty_cache()
     else:  # TODO: update
+    ii = 0
+    setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}_expand{args.expand}_dc{args.d_conv}_fc{args.factor}_eb{args.embed}_dt{args.distil}_{args.des}_{ii}'
+
+    if args.track:
+        wandb.init(entity="augustin-t-pelleau",
+                   project="capstoneATP",  # change to your project name
+                   name=setting,
+                   sync_tensorboard=True,
+                   monitor_gym=True, config={
+                    'model_id': args.model_id,
+                    'model': args.model,
+                    'data': args.data,
+                    'data_version': args.data_version,
+                    'seq_len': args.seq_len,
+                    'patch_len': args.patch_len,
+                    'stride': args.stride,
+                    'label_len': args.label_len,
+                    'pred_len': args.pred_len,
+                    'd_model': args.d_model,
+                    'n_heads': args.n_heads,
+                    'e_layers': args.e_layers,
+                    'd_layers': args.d_layers,
+                    'd_ff': args.d_ff,
+                    'enc_in': args.enc_in,
+                    'batch_size': args.batch_size,
+                    'dropout': args.dropout,
+                    'learning_rate': args.learning_rate,
+                    'des': args.des},
+                   save_code=True)
+        writer = SummaryWriter(f"runs/{setting}")
+        writer.add_text(
+            "hyperparameters",
+            "|param|value|\n|-|-|\n%s" % ("\n".join([f"|{key}|{value}|" for key, value in vars(args).items()])),
+        )
+    else:
+        writer = None
+
+    exp = Exp(args, writer)  # set experiments
+    print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
+    exp.test(setting, test=1)
+    torch.cuda.empty_cache()
+
+    if writer is not None:
+        writer.close()
+
+    if args.track:
+        wandb.finish()# TODO: update
         ii = 0
         setting = '{}_{}_{}_{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
             args.task_name,
