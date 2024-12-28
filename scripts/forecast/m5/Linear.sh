@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=0
 
 model_name=Linear
 
-python -u run.py \
+python -u /content/Time-Series-Capstone/run.py \
   --task_name forecast \
   --is_training 1 \
   --root_path ./dataset/m5/ \
