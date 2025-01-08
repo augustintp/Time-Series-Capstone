@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=7
 
 model_name=Enc_Only_Transformer
 
-python -u /content/Time-Series-Capstone/run.py \
+python -u run.py \
   --task_name forecast \
   --is_training 1 \
   --root_path ./dataset/m5/ \
