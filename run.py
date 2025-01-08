@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
             if args.track:
                 wandb_tags = []
-                wandb.init(entity="augustin-t-pelleau",
+                wandb.init(entity="augustin-t-pelleau-uc-berkeley-electrical-engineering-co",
                            project="capstoneATP",  # TODO: change to your project name
                            name=setting,
                            sync_tensorboard=True,
@@ -199,7 +199,7 @@ if __name__ == '__main__':
         setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}_expand{args.expand}_dc{args.d_conv}_fc{args.factor}_eb{args.embed}_dt{args.distil}_{args.des}_{ii}'
     
         if args.track:
-            wandb.init(entity="augustin-t-pelleau",
+            wandb.init(entity="augustin-t-pelleau-uc-berkeley-electrical-engineering-co",
                        project="capstoneATP",  # change to your project name
                        name=setting,
                        sync_tensorboard=True,
