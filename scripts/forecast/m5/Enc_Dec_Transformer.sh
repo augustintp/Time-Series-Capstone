@@ -5,7 +5,7 @@ model_name=Enc_Dec_Transformer
 python -u /content/Time-Series-Capstone/run.py \
   --task_name forecast \
   --is_training 1 \
-  --root_path ./dataset/m5/ \
+  --root_path /content/Time-Series-Capstone/dataset/m5 \
   --model_id simple_implementation \
   --model $model_name \
   --data M5 \
