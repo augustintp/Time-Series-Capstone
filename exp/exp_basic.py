@@ -1,6 +1,6 @@
 import os
 import torch
-from models import Linear, DeepAR, Enc_Only_Transformer
+from models import Linear, DeepAR, Enc_Only_Transformer, Enc_Dec_Transformer
 
 from torch import nn
 from torch.nn.parallel import DistributedDataParallel
@@ -16,7 +16,8 @@ class Exp_Basic(object):
         self.model_dict = {
             'Linear': Linear,
             'DeepAR': DeepAR,
-            'Enc_Only_Transformer': Enc_Only_Transformer
+            'Enc_Only_Transformer': Enc_Only_Transformer,
+            'Enc_Dec_Transformer': Enc_Dec_Transformer
         }
         self.device = self._acquire_device()
         self.model = None
